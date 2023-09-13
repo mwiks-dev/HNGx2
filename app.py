@@ -41,7 +41,7 @@ def create_person():
 
     return jsonify({'message': 'Person created successfully'}), 201
 
-# Get details of a person by user_id or name
+# Get details of a person by user_id
 @app.route('/api/<param>', methods=['GET'])
 def get_person(param):
     if param.isdigit():
