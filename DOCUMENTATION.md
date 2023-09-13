@@ -2,6 +2,8 @@
 
 This documentation provides information on how to use the REST API for managing persons.
 
+## Base URL
+The Base URL for all API endpoints is `https://mwiks.pythonanywhere.com/api`
 
 ## Endpoints
 
@@ -28,7 +30,7 @@ This documentation provides information on how to use the REST API for managing 
 - **201:** Person created successfully
 - **400:** Bad Request (Incase of errors)
 
-### 2. Get a Person by ID (GET)
+### 2. Get a Person by ID or Name(GET)
 - Retrieve details of a person by specifying their ID or Name
 - **URL:** `/api/<param>`
 - **Method:** GET
@@ -45,11 +47,11 @@ This documentation provides information on how to use the REST API for managing 
 ```
 - **Status Codes:**
 - **200:** OK (Person found)
-- **404:** Not Found (Person not found or does not exist)
+- **404:** Not Found (Person not found)
 - **400:** Bad Request (in case of errors)
 
 ### 3. Update a Person by ID (PUT)
-- Modify details of an existing person by specifying their ID.
+- Modify details of an existing person by inputting their ID.
 - **URL:** `/api/<int:user_id>`
 - **Method:** PUT
 - **Request Format:**
@@ -100,14 +102,14 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }' 
 **Get a Person by ID**
 ``` bash
-curl 
+curl https://mwiks.pythonanywhere.com/api/1
 
 **Update a Person by ID**
 ``` bash
 curl -X PUT -H "Content-Type: application/json" -d '{
   "age": 21
-}' 
+}' https://mwiks.pythonanywhere.com/api/1
 
 **Delete a Person by ID**
 ``` bash
-curl -X DELETE 
+curl -X DELETE https://mwiks.pythonanywhere.com/api/1
